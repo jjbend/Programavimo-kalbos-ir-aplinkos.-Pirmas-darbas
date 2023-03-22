@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uzrasine</title>
+</head>
+<style>
+.diva{
+    background-color: pink;
+    padding-left: 50%;
+    font-size: x-large;
+}
+.notes{
+    background-color: rgba(137, 43, 226, 0.438);
+    border: 1px, palevioletred;
+    margin: 2rem;
+}
+.notes h2{
+    background-color: rgba(226, 43, 67, 0.342);
+    margin-top: 5px;
+    border: 1px solid rgba(228, 203, 207, 0.418);
+    margin-inline: 1px;
+    padding:0% 1px;
+
+}
+.button {
+    background-color: aqua;
+    width: 10vw;
+    height: 5vh;
+    color: blueviolet;
+    border: none;
+    border-radius: 10 px;
+}
+.button:hover {
+    background-color: rgba(58, 17, 17, 0.616);
+    cursor:pointer;
+}
+</style>
+<body>
+    
+<div class="diva">
+    <h1>Uzrasine</h1>
+</div>
+
+
+<form action="/notes"method="POST">
+    <input id="note2" name="note2" value="1">
+    <br>
+    <br>
+    <input class=button type="submit" value="Submit">
+</form> 
+<div class="notes">
+{%for i in note%}
+<h2>{{i}}</h2>
+{%endfor%}
+</div>
+<p>
+    {{note}}
+</p>
+</body>
+</html>
