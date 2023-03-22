@@ -71,8 +71,20 @@ def createDB():
     """
     cursor.execute(createTableString)
     cursor.execute(createNotesTableString)
+    cursor.execute(createRegistracijaTableString)
+
 
 def insert_into_db(note):
+    conn=sqlite3.connect(".\\NotesDatabase.db")
+    queryString="""
+        INSERT INTO Sheets (Name) Values (?)
+    """
+
+    cur=conn.cursor()
+    cur.execute(queryString,(note,))
+    conn.commit()
+
+def insert_into_db(registracija):
     conn=sqlite3.connect(".\\NotesDatabase.db")
     queryString="""
         INSERT INTO Sheets (Name) Values (?)
