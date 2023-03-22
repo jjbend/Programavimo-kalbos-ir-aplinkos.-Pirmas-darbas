@@ -60,10 +60,15 @@ def createDB():
         Text TEXT,
         FOREIGN KEY (SheetId) REFERENCES Sheets(Id)
     )
-    
-    
+
     """
-    
+    createRegistracijaTableString = """ CREATE TABLE IF NOT EXISTS Registracija (
+        Id INTEGER PRIMARY KEY AUTOINCREMENT,
+        Username TEXT,
+        Password TEXT
+    )
+
+    """
     cursor.execute(createTableString)
     cursor.execute(createNotesTableString)
 
@@ -85,6 +90,15 @@ def select_from_db():
     cur=conn.cursor()
     array = cur.execute(queryString).fetchall()
     return array
+
+@app.route("/registracija",methods=["GET","POST"])
+def registracija():
+
+       return render_template('./registracija.html')
+
+def add_to_array():
+    array = []
+
 
 if __name__ =="__main__":
     createDB()

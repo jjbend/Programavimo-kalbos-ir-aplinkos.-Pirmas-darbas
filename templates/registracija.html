@@ -9,21 +9,16 @@
 
 <body>
     <div class="diva">
-        <h1>Registracija</h1>
-    </div>
-    
-    
-    <form action="/registracija"method="POST">
-        <input id="registracija2" name="registracija2" value="usser name">
-        <br>
-        <br>
-        <input class=button type="submit" value="Submit">
-    </form> 
-    <form action="/registracija"method="POST">
-        <input id="registracija2" name="registracija2" value="password">
-        <br>
-        <br>
-        <input class=button type="submit" value="Submit">
-    </form>  
+        <h2>HTML Forms</h2>
+
+        <form action="/action_page.php">
+          <label for="fname">User name:</label><br>
+          <input type="text" id="fname" name="fname" value=" "><br>
+          <label for="lname">Pasword:</label><br>
+          <input type="text" id="lname" name="lname" value=" "><br><br>
+          <input type="submit" value="Submit">
+        </form> 
+        
+        <p>If you click the "Submit" button, the form-data will be sent to a page called "/action_page.php".</p> 
 </body>
 </html>
