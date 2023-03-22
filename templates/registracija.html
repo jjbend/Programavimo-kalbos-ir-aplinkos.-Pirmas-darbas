@@ -8,13 +8,13 @@
 </head>
 <style>
     .diva{
-        background-color: rgb(143, 34, 52);
+        background-color: rgb(243, 148, 163);
         padding-left: 50%;
         font-size: x-large;
     }
     .registracija{
         background-color: rgba(137, 43, 226, 0.438);
-        border: 1px, palevioletred;
+        border: 1px, rgb(241, 69, 127);
         margin: 2rem;
     }
     .button {
@@ -35,11 +35,12 @@
     <div class="diva">
         <h2>Registracija</h2>
 
-        <form action="/action_page.php">
-          <label for="fname">User name:</label><br>
-          <input type="text" id="fname" name="fname" value=" "><br>
-          <label for="lname">Pasword:</label><br>
-          <input type="password" id="lname" name="lname" value=" "><br><br>
+        
+    <form action="/registracija"method="POST">
+          <label for="username">User name:</label><br>
+          <input type="text" id="username" name="username" value=" "><br>
+          <label for="pasword">Pasword:</label><br>
+          <input type="password" id="pasword" name="pasword" value=" "><br><br>
           <input type="submit" value="Submit">
         </form> 
         

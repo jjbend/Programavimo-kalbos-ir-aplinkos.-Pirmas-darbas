@@ -84,14 +84,14 @@ def insert_into_db(note):
     cur.execute(queryString,(note,))
     conn.commit()
 
-def insert_into_db(registracija):
+def insert_user(username, pasword):
     conn=sqlite3.connect(".\\NotesDatabase.db")
     queryString="""
-        INSERT INTO Sheets (Name) Values (?)
+        INSERT INTO Registracija (Username, Password) Values (?,?)
     """
 
     cur=conn.cursor()
-    cur.execute(queryString,(note,))
+    cur.execute(queryString,(username, pasword))
     conn.commit()
 
 def select_from_db():
@@ -105,8 +105,11 @@ def select_from_db():
 
 @app.route("/registracija",methods=["GET","POST"])
 def registracija():
-
-       return render_template('./registracija.html')
+    if(request.method == "POST"):
+      username=request.form.get("username")
+      pasword=request.form.get("pasword")
+      insert_user(username, pasword)
+    return render_template('./registracija.html')
 
 def add_to_array():
     array = []
